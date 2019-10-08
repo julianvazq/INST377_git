@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>INST377 | Dynamic Web Applications HW1</title>
+</head>
+
+<!-- This is a comment -->
+
+<body>
+    <header>
+        <h1>INST377 Dynamic Web Applications</h1>
+    </header>
+    <nav class="nav">
+        <h2>NAVIGATION</h2>
+        <ul>
+            <li><a href="#section-one">Section 1</a></li>
+            <li><a href="#section-two">Section 2</a></li>
+            <li><a href="#section-three">Section 3</a></li>
+            <li><a href="#section-four">Section 4</a></li>
+        </ul>
+    </nav>
+    <!-- SECTION 1 -->
+    <section class="section-one" id="section-one">
+        <div class="container container-one">
+            <h2>Section #1: paragraph and anchor elements</h2>
+            <p>This is a paragraph element. Paragraphs are block elements, which means that by default they take up
+                100%
+                of
+                the
+                screen width.</p>
+            <p>Inside paragraphs, we can have <a href="http://google.com">links</a>, which in HTML are called
+                "anchors".
+                Anchors are inline elements, which means that they don't alter the flow of the document (they stay
+                inline
+                with
+                the text).
+                Through the attribute "href", anchors allow us to reference other sites or different sections of the
+                same
+                page.</p>
+        </div>
+        <!-- SECTION 2 -->
+    </section>
+    <section class="section-two" id="section-two">
+        <div class="container">
+            <h2>Section #2: the img element</h2>
+            <p>This paragraph is inside a section element, which just like paragraphs, are also block elements.</p>
+            <figure>
+                <img src="images/hedgehog.jpg" alt="hedgehog" />
+                <figcaption>Here's a picture of a hedgehog, using the img element</figcaption>
+            </figure>
+        </div>
+    </section>
+    <!-- SECTION 3 -->
+    <section class="section-three" id="section-three">
+        <div class="container">
+            <h2>Section #3: the list element</h2>
+            <p>There's two types of lists.</p>
+            <h3>Ordered lists</h3>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+            <h3>Unordered lists</h3>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+        <!-- SECTION 4 -->
+    </section>
+    <section class="section-four" id="section-four">
+        <div class="container">
+            <h2>Section #4: forms</h2>
+            <p>The "Submit" button won't work because we haven't told the page <i>where</i> to submit.
+                <form action="/action_page.php">
+                    First name:<br>
+                    <input type="text" name="firstname" value="Julian">
+                    <br>
+                    Last name:<br>
+                    <input type="text" name="lastname" value="Vazquez">
+                    <br><br>
+                    <input type="submit" value="Submit">
+                </form>
+        </div>
+    </section>
+    <footer>
+        <p>The End.</p>
+    </footer>
+</body>
+
+</html>
