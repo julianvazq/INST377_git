@@ -294,15 +294,17 @@
 
       for(let i = 0; i <= 49; i++) {
         const li = document.createElement("li");
-        li.innerHTML = json[Math.floor(Math.random()*json.length)].name;
+        const randCountry = json[Math.floor(Math.random()*json.length)];
+        li.innerHTML = `${randCountry.name} (${randCountry.code})`;
         country_list.appendChild(li);
       }
 
-      //Does not account for repeats
+      //Does not account for duplicates
       function getRandomCountries() {
         const countries = document.querySelectorAll(".countries li");
         for(let i = 0; i <= countries.length-1; i++) {
-        countries[i].innerHTML = json[Math.floor(Math.random()*json.length)].name;
+          const randCountry = json[Math.floor(Math.random()*json.length)];
+          countries[i].innerHTML = `${randCountry.name} (${randCountry.code})`;
         }
       }
    
