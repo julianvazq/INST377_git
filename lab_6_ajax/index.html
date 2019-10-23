@@ -18,6 +18,7 @@
     </div>
     <script>
       function loadData() {
+        // Remove all current list items before adding new ones
         const countryList = document.querySelector(".country_list");
         countryList.innerHTML = "";
         fetch("ajax_sample.json")
