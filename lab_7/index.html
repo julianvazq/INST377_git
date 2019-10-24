@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test AJAX page</title>
+    <link rel="stylesheet" type="text/css" href="./lab_styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">UMD Bus Routes</div>
+        <button class="button" onclick="loadData()">Load Some JSON</button>
+        <div class="content">
+          <ul class="route_list"></ul>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+      function loadData() {
+        fetch("https://api.umd.io/v0/bus/routes")
+          .then(res => res.json())
+          .then(res => {
+            // you can now work in this area
+            console.log("First console log: ", res);
+            return res;
+          })
+          .then(res => res.map(route => route))
+          .then(routes => {
+            console.log("Second console log: ", routes);
+            return routes;
+          })
+          .then(routes => {
+            let routeInfo = "";
+            routes.forEach(r => {
+              routeInfo += `<li><strong>Route ID</strong>: ${r.route_id}, <strong>Title</strong>: ${r.title}`;
+            });
+            routeList = document.querySelector(".route_list");
+            routeList.innerHTML = routeInfo;
+
+            return routes;
+          })
+          .then(routes => {
+            /* CLASS SOLUTION COMMENTED OUT */
+            /* const routeObject = routes.find(r => {
+               return r.route_id === "114";
+             });
+             document.querySelector(
+              ".header"
+            ).innerText = `UMD Bus Route ${routeObject.title}`;
+            */
+
+            /* FUN SOLUTION BELOW */
+            const routeObject =
+              routes[Math.floor(Math.random() * routes.length)]; //Randomized route displayed
+            document.querySelector(
+              ".header"
+            ).innerText = `UMD Bus Route ${routeObject.title}`;
+
+            const listElements = document.querySelectorAll(".route_list li");
+            listElements.forEach(li => {
+              if (li.innerText.substring(10, 13) === routeObject.route_id) {
+                li.style.color = "red";
+              }
+            });
+
+            return routes;
+          })
+          .then(routes => console.log("Third console log: ", routes));
+      }
+    </script>
+  </body>
+</html>
